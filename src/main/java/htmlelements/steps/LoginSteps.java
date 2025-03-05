@@ -91,7 +91,6 @@ public class LoginSteps {
         assertEquals(text, errorMessage.getText());
 
         return this;
-        ////div[@class='alert-content']
     }
 
     public LoginSteps verifyErrorMessage(String expectedMessage){

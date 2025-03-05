@@ -44,8 +44,6 @@ public class AccountSidebarSteps {
         createAccountButton.click();
         System.out.println("Clicked 'Create Account' button");
 
-        //wait.until(ExpectedConditions.urlContains("create-account"));
-
         return new CreateAccountSteps();
     }
 }

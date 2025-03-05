@@ -14,12 +14,10 @@ public class MainTest {
         System.out.println(ConfigurationProvider.getEnvironmentConfig().homepageUrl());
         System.out.println(ConfigurationProvider.getRunConfiguration().browserName());
 
-
         WebDriverFactory.initialize();
 
         WebDriver driver = WebDriverFactory.get();
 
-        //driver.get("https://www.google.com");
         driver.get("https://www.google.co.uk/");
         System.out.println("Opened google successfully");
 

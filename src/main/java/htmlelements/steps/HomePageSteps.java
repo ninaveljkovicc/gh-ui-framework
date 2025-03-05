@@ -24,39 +24,10 @@ public class HomePageSteps {
     }
 
     public HomePageSteps handleCookieConsent(){
-        /*try{
-            CookieConsentModal cookieConsent = homePage().cookieConsent();
-
-            if (cookieConsent == null) {
-                System.out.println("Cookie consent modal is null");
-                return this;
-            }
-
-            WebElement cookieButton = wait.until(ExpectedConditions.elementToBeClickable(cookieConsent.dontAcceptButton()));
-            //WebElement cookieButton = wait.until(ExpectedConditions.presenceOfElementLocated(cookieConsent.dontAcceptButton().getWrappedElement().getCoordinates()));
-
-            if(cookieButton.isDisplayed() && cookieButton.isEnabled()){
-                System.out.println("Cookie modal appeared, clicking 'Don't Accept'");
-                cookieButton.click();
-                wait.until(ExpectedConditions.invisibilityOf(cookieButton));
-            }
-        } catch (TimeoutException e) {
-            System.out.println("No cookie consent modal appeared");
-        } catch (NullPointerException e) {
-            System.out.println("Cookie modal reference was null.");
-        }*/
 
         HomePage homePage = pageFactory.on(HomePage.class);
         WebElement cookieButton = wait.until(ExpectedConditions.elementToBeClickable(homePage.dontAcceptButton()));
         cookieButton.click();
-
-        /*WebDriverWait wait = new WebDriverWait(driver, 20);
-
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"onetrust-banner-sdk\"]")));
-
-        WebElement consentButton = driver.findElement(By.xpath("//button[@id='onetrust-reject-all-handler']"));
-        wait.until(ExpectedConditions.elementToBeClickable(consentButton));
-        consentButton.click();*/
 
         System.out.println("Don't Accept button clicked");
 
@@ -66,7 +37,6 @@ public class HomePageSteps {
     public SearchSteps clickSearchButton(){
         WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(homePage().searchButton()));
         searchButton.click();
-        //homePage().searchButton().click();
         System.out.println("Search button clicked on home page");
 
         return new SearchSteps();

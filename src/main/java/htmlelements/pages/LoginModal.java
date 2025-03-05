@@ -22,14 +22,12 @@ public interface LoginModal extends ExtendedWebPage {
     @Description("Error message for invalid login")
     @FindBy("//*[@class=\"alert-header alert-danger\"]")
     ExtendedMyWebElement errorMessage();
-    //za prazna email i password polja: //*[@class="ember-view help-block qa-error-help-block has-error"]
-    //kad izadje: We've encountered an unexpected error on our end. Please try again later.
-    ////*[@class="ember-view help-block qa-error-help-block has-error _help-block_21ei9c"]
-    // za to moze i ovo: //*[@class="alert-content"]
+    //za prazan email i password polja
 
-    @Description("Error message for valid login")
+    @Description("Error message for 'valid' login")
     @FindBy("//div[@class='alert-content']//ul//li")
     ExtendedMyWebElement errorMessage2();
+    //kad izadje: We've encountered an unexpected error on our end. Please try again later.
 
     @Description("User's name displayed after login")
     @FindBy("//h2[@class=\"modal-title\"]") //ovde pise Nina's Account npr

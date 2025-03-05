@@ -43,17 +43,7 @@ public class SearchSteps {
     }
 
     public SearchSteps clickSearchIcon(){
-        /*try{
-            WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(searchSidebar().searchSubmitButton()));
-            if(searchButton.isDisplayed() && searchButton.isEnabled()){
-                searchButton.click();
-                System.out.println("Clicked search button in Search sidebar");
-            } else {
-                System.out.println("Search button is not interactable.");
-            }
-        } catch (TimeoutException e){
-            System.out.println("Search button did not become clickable in time");
-        }*/
+
 
         searchSidebar().searchSubmitButton().click();
         System.out.println("Clicked search button in Search sidebar");

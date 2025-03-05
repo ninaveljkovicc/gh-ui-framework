@@ -22,40 +22,14 @@ public class HomePageTest extends BaseTest{
         HomePage homePage = pageFactory.on(HomePage.class);
 
         WebDriverWait wait = new WebDriverWait(driver, 20);
-        //wait.until(ExpectedConditions.visibilityOf(homePage.accountIcon()));
-       /* assert homePage.accountIcon().isDisplayed();
-        assert homePage.searchButton().isDisplayed();
-        assert homePage.cartIcon().isDisplayed();
-        System.out.println("HomePage elements are correctly initialized.");*/
 
-        //CookieConsentModal cookieConsent = homePage.cookieConsent();
-        /*if (cookieConsent != null) {
-            wait.until(ExpectedConditions.elementToBeClickable(cookieConsent.dontAcceptButton()));
-            cookieConsent.dontAcceptButton().click();
-            System.out.println("Don't Accept button clicked");
-        }*/
-
-        //try {
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"onetrust-banner-sdk\"]")));
-            //By.xpath("//*[@id=\"onetrust-banner-sdk\"]")
-            ////*[@id="onetrust-banner-sdk"] ovo je radilo ovo gore
-            ////*[@id="onetrust-banner-sdk"]
-            ////*[@id="onetrust-consent-sdk"]/div[1]
-
-            //CookieConsentModal cookieConsent = homePage.cookieConsent();
-
-            //wait.until(ExpectedConditions.elementToBeClickable(cookieConsent.dontAcceptButton()));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"onetrust-banner-sdk\"]")));
 
         WebElement consentButton = driver.findElement(By.xpath("//button[@id='onetrust-reject-all-handler']"));
         wait.until(ExpectedConditions.elementToBeClickable(consentButton));
         consentButton.click();
 
-            //cookieConsent.dontAcceptButton().click();
-            System.out.println("Don't Accept button clicked");
-
-        /*} catch (Exception e) {
-            System.out.println("Cookie Consent pop-up was not found, continuing test");
-        }*/
+        System.out.println("Don't Accept button clicked");
 
         wait.until(ExpectedConditions.elementToBeClickable(homePage.accountIcon()));
         assert homePage.accountIcon().isDisplayed();

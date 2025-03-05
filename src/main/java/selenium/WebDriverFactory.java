@@ -6,10 +6,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-//import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-//import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class WebDriverFactory {
     private static WebDriver driver;
@@ -43,10 +41,6 @@ public class WebDriverFactory {
     private static WebDriver createChromeDriver(){
         String seleniumVersion = ConfigurationProvider.getRunConfiguration().seleniumVersion();
 
-        //String chromeDriverPath = "/usr/local/bin/chromedriver";
-       /* System.setProperty("webdriver.chrome.driver", chromeDriverPath);
-        WebDriverManager.chromedriver().setup();
-        return new ChromeDriver();*/
         WebDriverManager.chromedriver().clearDriverCache().clearResolutionCache().forceDownload();
 
         if(seleniumVersion != null && !seleniumVersion.isEmpty()){
@@ -62,22 +56,15 @@ public class WebDriverFactory {
         options.addArguments("--incognito");
 
         return new ChromeDriver(options);
-        /*WebDriverManager.chromedriver().setup();
-        return new ChromeDriver();*/
     }
 
     private static WebDriver createFirefoxDriver(){
         String seleniumVersion = ConfigurationProvider.getRunConfiguration().seleniumVersion();
         if(seleniumVersion != null && !seleniumVersion.isEmpty()){
             WebDriverManager.firefoxdriver().driverVersion(seleniumVersion).setup();
-        }
-        else {
+        } else {
             WebDriverManager.firefoxdriver().setup();
         }
-
-        //FirefoxOptions options = new FirefoxOptions();
-       // return new FirefoxDriver();
-
         System.setProperty("webdriver.firefox.bin", "/Applications/Firefox.app/Contents/MacOS/firefox");
         return new FirefoxDriver();
     }

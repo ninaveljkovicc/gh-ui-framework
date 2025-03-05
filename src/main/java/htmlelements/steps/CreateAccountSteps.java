@@ -75,15 +75,11 @@ public class CreateAccountSteps {
     public CreateAccountSteps submitRegistration(){
         WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(createAccountPage().createAccountSubmitButton()));
         submitButton.click();
-        //createAccountPage().createAccountSubmitButton().click();
         System.out.println("Clicked Submit button to create an account");
-
-        //wait.until(ExpectedConditions.urlContains("account-summary"));
         return this;
     }
 
     public CreateAccountSteps verifyAccountCreated(){
-        //wait.until(ExpectedConditions.urlContains("account-summary"));
         AccountCreatedPage accountCreatedPage = pageFactory.on(AccountCreatedPage.class);
 
         WebElement successMessage = wait.until(ExpectedConditions.visibilityOf(accountCreatedPage.successMessage()));

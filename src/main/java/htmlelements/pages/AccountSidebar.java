@@ -9,7 +9,6 @@ public interface AccountSidebar extends ExtendedWebPage {
 
     @Description("Sign in button on account sidebar")
     @FindBy("//div[@class=\"modal-body\"]/div/button")
-    ////*[@class="modal-content "]/div[2]/div/button
     ExtendedMyWebElement signInButton();
 
     @Description("Create Account button")
